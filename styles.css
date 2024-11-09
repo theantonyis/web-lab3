@@ -1,5 +1,9 @@
+@import url('https://db.onlinewebfonts.com/c/62173628d2a624e236ce441c159caea9?family=FF+DIN+for+Puma+W01+Cond+Bold');
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'SF Pro Display', sans-serif;
 }
 h1 {
     color: #333;
@@ -7,4 +11,13 @@ h1 {
 #logo {
     width: 100px;
     height: 100px;
+}
+
+.navbar {
+    font-family: "FF DIN for Puma W01 Cond Bold", serif;
+    font-size: 20px;
+}
+
+.display-4 {
+    font-family: "FF DIN for Puma W01 Cond Bold", serif;
 }
