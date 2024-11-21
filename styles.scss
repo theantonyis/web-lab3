@@ -1,16 +1,58 @@
 @use "sass:color";
 
+// Importing fonts
 @import url('https://db.onlinewebfonts.com/c/62173628d2a624e236ce441c159caea9?family=FF+DIN+for+Puma+W01+Cond+Bold');
 @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
 
+// Font variables
 $primary-font: 'SF Pro Display', sans-serif;
 $secondary-font: "FF DIN for Puma W01 Cond Bold", sans-serif;
 $heading-color: #333;
-// Кольори для станів
-$btn-hover-color: #daa113; // Синій для hover стану
-$btn-active-color: color.adjust($btn-hover-color, $lightness: -10%); // Трохи темніший зелений
-$btn-focus-outline: color.scale($btn-hover-color, $alpha: -50%); // Напівпрозора рамка для focus
 
+// Button state colors
+$btn-hover-color: #daa113; // Hover state color
+$btn-active-color: color.adjust($btn-hover-color, $lightness: -10%); // Active state color
+$btn-focus-outline: color.scale($btn-hover-color, $alpha: -50%); // Focus outline color
+
+// Mixin for font styling
+@mixin font-styling($font-family, $font-size: 16px) {
+  font-family: $font-family;
+  font-size: $font-size;
+}
+
+// Keyframes for bounce animation
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// Keyframes for fade-in animation
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Mixin for bounce animation
+@mixin bounce-animation($duration: 0.6s, $timing: ease-in-out, $iteration: 1) {
+  animation: bounce $duration $timing $iteration;
+}
 
 // Global styles
 body {
@@ -21,46 +63,50 @@ h1 {
   color: $heading-color;
 }
 
-@mixin font-styling($font-family, $font-size: 16px) {
-  font-family: $font-family;
-  font-size: $font-size;
-}
-
 // Logo styling
 #logo {
   width: 100px;
   height: 100px;
 }
 
+// Navbar styling
 .navbar {
   @include font-styling($secondary-font, 20px);
 }
 
+// Display-4 styling
 .display-4 {
   @include font-styling($secondary-font, 48px);
 }
 
+// Button styling
+.btn {
+  @include bounce-animation;
+}
+
+// Link and button hover and active states
 a, button {
   position: relative;
   transition: all 0.3s ease;
 
   &:hover {
-    color: color.adjust($heading-color, $lightness: -10%); // Трохи темніше при наведенні
+    color: color.adjust($heading-color, $lightness: -10%); // Darker on hover
     text-decoration: underline;
   }
 
   &:active {
-    transform: scale(0.98); // Ефект стиснення
+    transform: scale(0.98); // Compression effect
   }
 }
 
-// Кнопки (включно з класами Bootstrap)
+// Button states including Bootstrap classes
 .btn {
   &:hover {
     background-color: color.adjust($btn-hover-color, $lightness: 10%);
     border-color: color.adjust($btn-hover-color, $lightness: 10%);
-    box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.3); // Slightly stronger outline on hover
+    box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.3); // Stronger outline on hover
     transition: box-shadow 0.3s ease; // No delay for hover
+    @include bounce-animation(1s, ease-out, infinite);
   }
 
   &:active {
@@ -75,8 +121,10 @@ a, button {
   }
 }
 
-// Лінки в навігації
+// Navigation link styling
 .nav-link {
+  opacity: 0;
+  animation: fadeIn 2s forwards 0.5s;
   &:hover {
     color: color.adjust($btn-hover-color, $lightness: 10%);
   }
