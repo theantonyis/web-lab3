@@ -1,23 +1,61 @@
-@import url('https://db.onlinewebfonts.com/c/62173628d2a624e236ce441c159caea9?family=FF+DIN+for+Puma+W01+Cond+Bold');
-@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
-
-
+@import url("https://db.onlinewebfonts.com/c/62173628d2a624e236ce441c159caea9?family=FF+DIN+for+Puma+W01+Cond+Bold");
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
 body {
-    font-family: 'SF Pro Display', sans-serif;
+  font-family: "SF Pro Display", sans-serif;
 }
+
 h1 {
-    color: #333;
+  color: #333;
 }
+
 #logo {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .navbar {
-    font-family: "FF DIN for Puma W01 Cond Bold", serif;
-    font-size: 20px;
+  font-family: "FF DIN for Puma W01 Cond Bold", sans-serif;
+  font-size: 20px;
 }
 
 .display-4 {
-    font-family: "FF DIN for Puma W01 Cond Bold", serif;
+  font-family: "FF DIN for Puma W01 Cond Bold", sans-serif;
+  font-size: 48px;
 }
+
+a, button {
+  position: relative;
+  transition: all 0.3s ease;
+}
+a:hover, button:hover {
+  color: rgb(25.5, 25.5, 25.5);
+  text-decoration: underline;
+}
+a:active, button:active {
+  transform: scale(0.98);
+}
+
+.btn:hover {
+  background-color: rgb(237.2025316456, 183.8101265823, 50.7974683544);
+  border-color: rgb(237.2025316456, 183.8101265823, 50.7974683544);
+  box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+.btn:active {
+  background-color: rgb(171.0886075949, 126.3544303797, 14.9113924051);
+  border-color: rgb(171.0886075949, 126.3544303797, 14.9113924051);
+}
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.5);
+  transition: box-shadow 0.3s ease 0.2s;
+}
+
+.nav-link:hover {
+  color: rgb(237.2025316456, 183.8101265823, 50.7974683544);
+}
+.nav-link:active {
+  color: rgb(171.0886075949, 126.3544303797, 14.9113924051);
+}
+
+/*# sourceMappingURL=styles.css.map */

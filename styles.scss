@@ -1,0 +1,87 @@
+@use "sass:color";
+
+@import url('https://db.onlinewebfonts.com/c/62173628d2a624e236ce441c159caea9?family=FF+DIN+for+Puma+W01+Cond+Bold');
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+$primary-font: 'SF Pro Display', sans-serif;
+$secondary-font: "FF DIN for Puma W01 Cond Bold", sans-serif;
+$heading-color: #333;
+// Кольори для станів
+$btn-hover-color: #daa113; // Синій для hover стану
+$btn-active-color: color.adjust($btn-hover-color, $lightness: -10%); // Трохи темніший зелений
+$btn-focus-outline: color.scale($btn-hover-color, $alpha: -50%); // Напівпрозора рамка для focus
+
+
+// Global styles
+body {
+  font-family: $primary-font;
+}
+
+h1 {
+  color: $heading-color;
+}
+
+@mixin font-styling($font-family, $font-size: 16px) {
+  font-family: $font-family;
+  font-size: $font-size;
+}
+
+// Logo styling
+#logo {
+  width: 100px;
+  height: 100px;
+}
+
+.navbar {
+  @include font-styling($secondary-font, 20px);
+}
+
+.display-4 {
+  @include font-styling($secondary-font, 48px);
+}
+
+a, button {
+  position: relative;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: color.adjust($heading-color, $lightness: -10%); // Трохи темніше при наведенні
+    text-decoration: underline;
+  }
+
+  &:active {
+    transform: scale(0.98); // Ефект стиснення
+  }
+}
+
+// Кнопки (включно з класами Bootstrap)
+.btn {
+  &:hover {
+    background-color: color.adjust($btn-hover-color, $lightness: 10%);
+    border-color: color.adjust($btn-hover-color, $lightness: 10%);
+    box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.3); // Slightly stronger outline on hover
+    transition: box-shadow 0.3s ease; // No delay for hover
+  }
+
+  &:active {
+    background-color: $btn-active-color;
+    border-color: $btn-active-color;
+  }
+
+  &:focus {
+    outline: none; // Remove default outline
+    box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.5); // Initial outline effect
+    transition: box-shadow 0.3s ease 0.2s; // Add delay for box-shadow
+  }
+}
+
+// Лінки в навігації
+.nav-link {
+  &:hover {
+    color: color.adjust($btn-hover-color, $lightness: 10%);
+  }
+
+  &:active {
+    color: $btn-active-color;
+  }
+}
