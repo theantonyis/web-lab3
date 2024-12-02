@@ -65,15 +65,15 @@ a:active, button:active {
 }
 
 .btn:hover {
-  background-color: rgb(237.2025316456, 183.8101265823, 50.7974683544);
-  border-color: rgb(237.2025316456, 183.8101265823, 50.7974683544);
+  background-color: rgb(237, 184, 51);
+  border-color: rgb(237, 184, 51);
   box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.3);
   transition: box-shadow 0.3s ease;
   animation: bounce 1s ease-out infinite;
 }
 .btn:active {
-  background-color: rgb(171.0886075949, 126.3544303797, 14.9113924051);
-  border-color: rgb(171.0886075949, 126.3544303797, 14.9113924051);
+  background-color: rgb(171, 126, 15);
+  border-color: rgb(171, 126, 15);
 }
 .btn:focus {
   outline: none;
@@ -86,10 +86,10 @@ a:active, button:active {
   animation: fadeIn 2s forwards 0.5s;
 }
 .nav-link:hover {
-  color: rgb(237.2025316456, 183.8101265823, 50.7974683544);
+  color: rgb(237, 184, 51);
 }
 .nav-link:active {
-  color: rgb(171.0886075949, 126.3544303797, 14.9113924051);
+  color: rgb(171, 126, 15);
 }
 
 /*# sourceMappingURL=styles.css.map */
